@@ -1,4 +1,4 @@
-# Task App Vuetify 3 medium.com Tutorial
+# Task App Vuetify 3 YouTube Tutorial
 
 ## Full Tutorial
 
