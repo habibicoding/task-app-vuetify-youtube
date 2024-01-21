@@ -31,9 +31,5 @@ export function useTaskNavigation() {
     router.replace({name: HOME_VIEW}).then();
   }
 
-  return {
-    handleTaskTypeSelected,
-    navigateToTaskView,
-    logoClicked
-  }
+  return {handleTaskTypeSelected, navigateToTaskView, logoClicked}
 }
