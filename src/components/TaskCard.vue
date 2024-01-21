@@ -1,11 +1,10 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import {useTaskStore} from "@/store/taskStore";
-import {TaskFetchResponse} from "@/dtos/taskDtos";
 import {formatDate} from "@/composables/formatDate";
-
+import {TaskFetchResponse} from "@/dtos/taskDtos";
 
 defineProps({
-  tasks: Array
+  tasks: Array,
 });
 
 const taskStore = useTaskStore();
@@ -14,8 +13,9 @@ const emits = defineEmits(['card-clicked', 'delete-clicked', 'edit-clicked']);
 const getBorderColorClass = (isTaskOpen: boolean) => {
   if (isTaskOpen) {
     return 'green-border';
+  } else {
+    return 'black-border';
   }
-  return 'black-border';
 };
 
 function storeTask(task: TaskFetchResponse) {
@@ -24,6 +24,7 @@ function storeTask(task: TaskFetchResponse) {
 }
 
 </script>
+
 
 <template>
   <p class="center-content" v-if="tasks?.length === 0">No tasks have been created yet...</p>

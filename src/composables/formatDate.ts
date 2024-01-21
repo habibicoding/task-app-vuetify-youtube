@@ -14,7 +14,7 @@ export const formatDate = (
   const parsedDate = new Date(date);
   if (isNaN(parsedDate.getTime())) {
     // Handle invalid date
-    console.warn('formattedDate: Invalid date provided');
+    console.warn('formatDate: Invalid date provided');
     return '';
   }
   return parsedDate.toLocaleDateString(locale, options).replace(/\//g, '.');

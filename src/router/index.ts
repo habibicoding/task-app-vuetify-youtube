@@ -1,6 +1,7 @@
 // Composables
 import {createRouter, createWebHistory} from 'vue-router'
-
+import TasksOverviewPage from "@/pages/TasksOverviewPage.vue";
+import {HOME_VIEW} from "@/constants/appConstants";
 
 const routes = [
   {
@@ -9,11 +10,8 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'home',
-        // route level code-splitting
-        // this generates a separate chunk (Home-[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import('@/pages/index.vue'),
+        name: HOME_VIEW,
+        component: TasksOverviewPage,
         props: true
       },
     ],
