@@ -5,6 +5,7 @@ defineProps({
     required: true
   }
 });
+
 </script>
 
 <template>
@@ -14,6 +15,7 @@ defineProps({
 </template>
 
 <style scoped>
+
 .loading-container {
   display: flex;
   justify-content: center;
@@ -25,4 +27,5 @@ defineProps({
   left: 0;
   background-color: rgba(255, 255, 255, 0.8);
 }
+
 </style>

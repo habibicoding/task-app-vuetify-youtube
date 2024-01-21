@@ -2,9 +2,9 @@ import axios, {AxiosError, AxiosInstance, AxiosResponse} from "axios";
 import {HTTP_STATUS_CODES} from "@/constants/appConstants";
 import {TaskCreateRequest, TaskUpdateRequest} from "@/dtos/taskDtos";
 
-const baseUrl = 'https://backend4vue.onrender.com/api/v1/';
-const api: AxiosInstance = axios.create({baseUrl});
 
+const baseUrl = 'https://backend4vue.onrender.com/api/v1/';
+const api: AxiosInstance = axios.create({baseURL: baseUrl});
 
 api.interceptors.response.use(
   (response: AxiosResponse) => response,

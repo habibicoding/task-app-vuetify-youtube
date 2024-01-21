@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {useTaskStore} from "@/store/taskStore";
+import {TaskFetchResponse} from "@/dtos/taskDto";
 import {formatDate} from "@/composables/formatDate";
-import {TaskFetchResponse} from "@/dtos/taskDtos";
 
 defineProps({
   tasks: Array,

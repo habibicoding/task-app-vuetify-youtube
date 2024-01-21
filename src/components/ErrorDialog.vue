@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import {PropType, ref, watch} from "vue";
+import {defineProps, PropType, ref, watch} from "vue";
 import {AxiosError} from "axios";
 
 const props = defineProps({
   axiosError: Object as PropType<AxiosError>,
   modelValue: Boolean
-})
+});
 
 const isDialogActive = ref(false);
 
 const emit = defineEmits(['update:modelValue']);
 
 watch(() => props.modelValue, newVal => {
-  isDialogActive.value = newVal
+  isDialogActive.value = newVal;
 });
 
 const closeDialog = () => {
