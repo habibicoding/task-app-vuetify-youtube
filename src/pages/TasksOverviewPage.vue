@@ -9,7 +9,7 @@ import MainBackground from "@/components/MainBackground.vue";
 import Navbar from "@/components/Navbar.vue";
 import LoadingSpinner from "@/components/LoadingSpinner.vue";
 import ErrorDialog from "@/components/ErrorDialog.vue";
-import TaskCard from "@/components/TaskCard.vue";
+import TaskOverviewCard from "@/components/TaskOverviewCard.vue";
 import {TaskFetchResponse} from "@/dtos/taskDtos";
 
 
@@ -59,7 +59,7 @@ const deleteTask = (id: number) => {
   <Navbar @task-type-selected="handleTaskTypeSelected" @logo-clicked="logoClicked"/>
   <MainBackground>
     <ErrorDialog :model-value="isNetworkError" :axios-error="axiosError"/>
-    <TaskCard
+    <TaskOverviewCard
       :tasks="tasks"
       @card-clicked="handleCardClicked"
       @delete-clicked="openDeleteDialog"
