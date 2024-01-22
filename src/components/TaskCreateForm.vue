@@ -8,16 +8,15 @@ const {handleSubmit, handleReset} = useForm({
   validationSchema: {
     description(value) {
       if (value?.length >= MIN_TASK_DESCRIPTION) return true
-
       return 'Description needs to be at least 3 characters.'
     },
     select(value) {
       if (value) return true
-
       return 'Select a priority!.'
     }
   }
 })
+
 const description = useField('description')
 const select = useField('select')
 const isReminderSet = useField('isReminderSet')
@@ -39,7 +38,7 @@ const emit = defineEmits(['create-new-task']);
 
 const submit = handleSubmit(values => {
   request.description = values.description;
-  request.isReminderSet = values.isReminderSet;
+  request.isReminderSet = values.isReminderSet !== undefined;
   request.priority = values.select;
   emit('create-new-task', request);
 });
@@ -76,4 +75,3 @@ const submit = handleSubmit(values => {
 
   </form>
 </template>
-

@@ -1,8 +1,8 @@
-import {TaskCreateRequest} from "@/dtos/taskDtos";
 import {Ref} from "vue";
 import {AxiosError} from "axios";
-import {webService} from "@/services/taskApi";
 import logRequestError from "@/composables/logRequestError";
+import {TaskCreateRequest} from "@/dtos/taskDtos";
+import {webService} from "@/services/taskApi";
 
 export async function generateTask(
   request: TaskCreateRequest,
@@ -24,6 +24,6 @@ export async function generateTask(
       isNetworkError.value = true;
     })
     .finally(() => {
-      isLoading.value = false
+      isLoading.value = false;
     });
 }

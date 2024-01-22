@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import {useTaskNavigation} from "@/composables/useTaskNavigation";
+import {useTaskNavigation} from '@/composables/useTaskNavigation';
 import {ref} from "vue";
-import {AxiosError, request} from "axios";
-import {TaskCreateRequest} from "@/dtos/taskDtos";
+import {AxiosError} from "axios";
 import {generateTask} from "@/composables/generateTask";
-import Navbar from "@/components/Navbar.vue";
 import MainBackground from "@/components/MainBackground.vue";
-import ErrorDialog from "@/components/ErrorDialog.vue";
 import LoadingSpinner from "@/components/LoadingSpinner.vue";
+import ErrorDialog from "@/components/ErrorDialog.vue";
+import Navbar from "@/components/Navbar.vue";
+import {TaskCreateRequest} from "@/dtos/taskDtos";
 import TaskCreateForm from "@/components/TaskCreateForm.vue";
+
 
 const {handleTaskTypeSelected, logoClicked, navigateToTasksView} = useTaskNavigation();
 const isLoading = ref(false);
