@@ -11,6 +11,8 @@ import LoadingSpinner from "@/components/LoadingSpinner.vue";
 import ErrorDialog from "@/components/ErrorDialog.vue";
 import TaskOverviewCard from "@/components/TaskOverviewCard.vue";
 import {TaskFetchResponse} from "@/dtos/taskDtos";
+import {removeTask} from "@/composables/removeTask";
+import TaskDeleteDialog from "@/components/TaskDeleteDialog.vue";
 
 
 const {fetchTasks, tasks, isLoading, isNetworkError, axiosError} = getTasks();
@@ -50,7 +52,7 @@ const navigateToTaskUpdateView = (task: TaskFetchResponse) => {
 };
 
 const deleteTask = (id: number) => {
-  console.log("delete clicked");
+  removeTask(id, isLoading, isNetworkError, axiosError, fetchTasks, taskStore.selectedTaskType);
 };
 
 </script>
@@ -65,6 +67,10 @@ const deleteTask = (id: number) => {
       @delete-clicked="openDeleteDialog"
       @edit-clicked="navigateToTaskUpdateView"
     />
+    <TaskDeleteDialog
+      v-model="isDeleteDialogSelected"
+      :task-description="selectedTaskDescription.valueOf()"
+      @confirm-delete="deleteTask(selectedTaskId.valueOf())"/>
     <LoadingSpinner :is-loading="isLoading"/>
   </MainBackground>
 </template>
