@@ -1,7 +1,7 @@
 import {describe, expect, it} from "vitest";
 import {formatDate} from "../src/composables/formatDate";
 
-describe('Unit Tests for formateDate composable', () => {
+describe('Unit Tests for formatDate composable', () => {
   it('when date is valid then return formatted date', () => {
     const actualDate1 = '2024-01-23';
     const expectedDate1 = '23.01.2024';
