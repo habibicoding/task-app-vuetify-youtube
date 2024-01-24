@@ -13,7 +13,7 @@ export const restHandlers = [
     return res(ctx.status(201), ctx.json(mockTaskCreateRequest));
   }),
   // Add mock for successful POST call
-  rest.patch('https://backend4vue.onrender.com/api/v1/tasks:id', (req, res, ctx,) => {
+  rest.patch('https://backend4vue.onrender.com/api/v1/tasks/:id', (req, res, ctx,) => {
     return res(ctx.status(200), ctx.json(mockTaskUpdateRequest));
   }),
   // Add mock for successful DELETE call
