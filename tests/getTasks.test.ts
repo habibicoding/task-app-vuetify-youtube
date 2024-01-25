@@ -15,7 +15,7 @@ describe('Unit Tests for getTasks composable', () => {
   it('when getTasks is called then expect response to be equal to mockFetchResponse', async () => {
     // assign
     webService.getTasks = async () => ({data: mockTaskFetchResponse});
-    const {fetchTasks, tasks, isLoading, isNetworkError, axiosError} = getTasks();
+    const {fetchTasks, tasks, isLoading, isNetworkError} = getTasks();
 
     // act
     await fetchTasks('');
@@ -30,7 +30,7 @@ describe('Unit Tests for getTasks composable', () => {
     const errorMessage = 'Network error';
     const actualError = new AxiosError(errorMessage);
     webService.getTasks = vi.fn(() => Promise.reject(actualError));
-    const {fetchTasks, tasks, isLoading, isNetworkError, axiosError} = getTasks();
+    const {fetchTasks, isLoading, isNetworkError, axiosError} = getTasks();
 
     // act
     await fetchTasks('');

@@ -8,7 +8,6 @@ import {TaskUpdateRequest} from "@/dtos/taskDtos";
 import {editTask} from "@/composables/editTask";
 import ErrorDialog from "@/components/ErrorDialog.vue";
 import MainBackground from "@/components/MainBackground.vue";
-import TaskCreateForm from "@/components/TaskCreateForm.vue";
 import Navbar from "@/components/Navbar.vue";
 import LoadingSpinner from "@/components/LoadingSpinner.vue";
 import TaskUpdateForm from "@/components/TaskUpdateForm.vue";
